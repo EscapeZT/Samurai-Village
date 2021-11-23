@@ -38,11 +38,13 @@
   <ItemGroup>
      <Compile Include="Assets\SampleScenes\Scripts\ParticleSceneControls.cs" />
      <Compile Include="Assets\Scripts\QuestLogic.cs" />
+     <Compile Include="Assets\Scripts\GuideTrigger.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\SlowMoButton.cs" />
      <Compile Include="Assets\Scripts\LeekPickup.cs" />
      <Compile Include="Assets\SampleScenes\Scripts\LevelReset.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\SceneAndURLLoader.cs" />
      <Compile Include="Assets\Scripts\UIBobAnim.cs" />
+     <Compile Include="Assets\Scripts\NoPlayerZone.cs" />
      <Compile Include="Assets\Scripts\SwordPickup.cs" />
      <Compile Include="Assets\SampleScenes\Menu\Scripts\PauseMenu.cs" />
      <Compile Include="Assets\Scripts\AnimationRand.cs" />
@@ -54,8 +56,6 @@
      <Compile Include="Assets\Scripts\MarketSellerTrigger.cs" />
      <Compile Include="Assets\MiniMap\MiniMap.cs" />
      <Compile Include="Assets\Scripts\EndQuestTrigger.cs" />
-     <Compile Include="Assets\Scripts\NoPlayerZone.cs" />
-     <Compile Include="Assets\Scripts\GuideTrigger.cs" />
      <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="UnityEngine">
         <HintPath>/Applications/Unity/Hub/Editor/2020.2.2f1/Unity.app/Contents/Managed/UnityEngine/UnityEngine.dll</HintPath>
@@ -625,79 +625,79 @@
         <HintPath>/Applications/Unity/Hub/Editor/2020.2.2f1/Unity.app/Contents/NetStandard/compat/2.0.0/shims/netfx/mscorlib.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Shaders">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Shaders.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Runtime">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualStudio.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.VisualStudio.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Searcher.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Searcher.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Runtime">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.ShaderLibrary">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
     </Reference>
     <Reference Include="Unity.ShaderGraph.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.ShaderGraph.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Cinemachine">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
     </Reference>
     <Reference Include="com.unity.cinemachine.editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Universal.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Universal.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
-        <HintPath>/Users/benweatherill/Documents/GitHub/samurai_game/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
+        <HintPath>/Users/benweatherill/Documents/GitLab/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

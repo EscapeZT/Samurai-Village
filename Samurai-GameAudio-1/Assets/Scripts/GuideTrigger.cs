@@ -22,7 +22,7 @@ public class GuideTrigger : MonoBehaviour
     void Update()
     {
         GuideFade();
-        Debug.Log(guideImage.color.a);
+      
         
     }
 
@@ -46,17 +46,16 @@ public class GuideTrigger : MonoBehaviour
     {
         var tempcolor = guideImage.color;
 
-        Debug.Log("TempColor = "+tempcolor.a);
         if (guideOn == true && tempcolor.a < 1)
         {
-            Debug.Log("Fade In");
+          
             tempcolor.a += guidefadetime;
 
         }
         else if (guideOn == false && tempcolor.a > 0)
         {
             tempcolor.a -= guidefadetime;
-            Debug.Log("Fade Out");
+      
         }
         guideImage.color = tempcolor;
     }
