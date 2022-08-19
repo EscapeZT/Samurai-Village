@@ -3,7 +3,13 @@
 ## About
 This project is designed to provide you with a fluid 3rd person adventure game to test your game audio implementation skills. The Game features small quests to test your knowledge of c#, volumes & triggers, multiple surface types for footsteps, basic character animations and more.
 
-**This project is for Unity 2020.2.2** 
+## Unity Version
+<b>Last Updated 19/08/22</b> <br>
+<i>Please note that this project has been updated to a newer version of unity. </i>
+
+<b>Current Project Version for Unity LTS 2021.3.8f1 for Apple Silicon (also works with Windows/Linux)</b>
+
+<i>Previous Version 2020.2.2</i>
 
 ### Contributors
 - Assets & Basic Level Design by Synty Studios (Samurai Pack)
@@ -16,7 +22,7 @@ You can either do 1 of the following:
 
 ### Known Issues
 Please see the list below for current known issues. When resolved these will be moved to the resolved issues section
-- When opening the unity project the incorrect scene may load, showing a blank scene. The correct scene is located in **Assets > PolygonSamurai > Scenes > Demo**
+- When opening the unity project the incorrect scene may load, showing a blank scene. The correct scene is located in <b>Assets > PolygonSamurai > Scenes > Demo</b>
 
 ### Resolved Issues
 
