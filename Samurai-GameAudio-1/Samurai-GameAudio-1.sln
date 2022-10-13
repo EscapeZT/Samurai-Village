@@ -1,19 +1,35 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnity", "FMODUnity.csproj", "{62fc597b-547e-3f59-388a-5c6db01800c9}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-firstpass", "Assembly-CSharp-firstpass.csproj", "{cd0193ea-b27c-3a57-4ad4-a7a694bbf7f1}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{d6d8cea1-d6cf-1eb5-9b3c-c7b7a0235482}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonance", "FMODUnityResonance.csproj", "{7d5e666b-4b4f-b28e-ff69-dfd806410b67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityEditor", "FMODUnityEditor.csproj", "{f469c094-787e-d62d-794a-d391c7cdef84}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FMODUnityResonanceEditor", "FMODUnityResonanceEditor.csproj", "{7ccfcc6e-2255-e6cb-fc7b-4cea95b7ff6f}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62fc597b-547e-3f59-388a-5c6db01800c9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62fc597b-547e-3f59-388a-5c6db01800c9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{cd0193ea-b27c-3a57-4ad4-a7a694bbf7f1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{cd0193ea-b27c-3a57-4ad4-a7a694bbf7f1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{d6d8cea1-d6cf-1eb5-9b3c-c7b7a0235482}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{d6d8cea1-d6cf-1eb5-9b3c-c7b7a0235482}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7d5e666b-4b4f-b28e-ff69-dfd806410b67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7d5e666b-4b4f-b28e-ff69-dfd806410b67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{f469c094-787e-d62d-794a-d391c7cdef84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{f469c094-787e-d62d-794a-d391c7cdef84}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7ccfcc6e-2255-e6cb-fc7b-4cea95b7ff6f}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7ccfcc6e-2255-e6cb-fc7b-4cea95b7ff6f}.Debug|Any CPU.Build.0 = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
