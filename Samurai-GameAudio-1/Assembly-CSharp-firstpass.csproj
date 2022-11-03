@@ -359,26 +359,26 @@
     <Reference Include="UnityEditor.UnityConnectModule">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.11f1/Unity.app/Contents/Managed/UnityEngine/UnityEditor.UnityConnectModule.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Burst.Cecil.Pdb">
-        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll</HintPath>
-    </Reference>
-    <Reference Include="clipper_library">
-        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.cinemachine@2.8.6/Runtime/ThirdParty/clipper_library.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.Burst.Unsafe">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Mdb">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Mdb.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Burst.Cecil.Pdb">
+        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Pdb.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Burst.Cecil">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Burst.Cecil.Rocks">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.burst@1.7.3/Unity.Burst.CodeGen/Unity.Burst.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="clipper_library">
+        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.cinemachine@2.8.6/Runtime/ThirdParty/clipper_library.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/PackageCache/com.unity.nuget.newtonsoft-json@3.0.2/Runtime/Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
         <HintPath>/Applications/Unity/Hub/Editor/2021.3.11f1/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -839,11 +839,11 @@
     <Reference Include="Unity.RenderPipeline.Universal.ShaderLibrary">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipeline.Universal.ShaderLibrary.dll</HintPath>
     </Reference>
-    <Reference Include="Unity.Mathematics.Editor">
-        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
-    </Reference>
     <Reference Include="Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+        <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.RenderPipelines.Core.Editor">
         <HintPath>/Users/ac8387/Documents/GitHub/samurai_village_gameaudio_unity/Samurai-GameAudio-1/Library/ScriptAssemblies/Unity.RenderPipelines.Core.Editor.dll</HintPath>
