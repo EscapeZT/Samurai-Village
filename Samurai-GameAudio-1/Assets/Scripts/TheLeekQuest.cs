@@ -18,7 +18,11 @@ public class TheLeekQuest : MonoBehaviour
     public GameObject leekToGive;
     public bool questStarted;
     bool doesPlayerHaveLeek;
-    // Start is called before the first frame update
+
+    /*GAME AUDIO TIP
+    Your FMOD & player objects should be defined here
+    */
+
     void Start()
     {
         questStarted = false;
@@ -29,13 +33,17 @@ public class TheLeekQuest : MonoBehaviour
         leekUIImage.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         LeekPickup();
         MarketSellerStart();
         MarketSellerEnd();
     }
+
+
+    /* GAME AUDIO TIP
+    MarketSellerStart starts The Leek Quest. 
+    */
 
     void MarketSellerStart()
     {
@@ -44,13 +52,20 @@ public class TheLeekQuest : MonoBehaviour
             pressToTalkUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //Add your conversation here
+                //Dialogue should be called here
 
                 questStarted = true;
                 pressToTalkUI.SetActive(false);
             }
         }
     }
+
+    /* GAME AUDIO TIP
+    Leek pickup (below) checks if the leek can be collected (if the quest has started) 
+    and if the player is in the leek collection trigger box by referencing the 
+    bool found in LeekPickup.cs
+    */
+
     void LeekPickup()
     {
         if (questStarted == true && leekTrigger.GetComponent<LeekPickup>().playerIsInLeekTrigger == true)
@@ -60,6 +75,9 @@ public class TheLeekQuest : MonoBehaviour
                 pressToPickUpUI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
+                    //Pickup sound should be called here
+                    //You could either call it at the players location or store the location of the box pickup
+
                     pressToPickUpUI.SetActive(false);
                     Destroy(leekToCollect);
                     doesPlayerHaveLeek = true;
@@ -70,6 +88,11 @@ public class TheLeekQuest : MonoBehaviour
             }
         }
     }
+
+    /* GAME AUDIO TIP
+    MarketSellerEnd checks if the player has the leeks and will allow the player
+    to complete the quest and start the end quest dialogue
+    */
     void MarketSellerEnd()
     {
         if (doesPlayerHaveLeek == true && marketSellerTrigger.GetComponent<MarketSellerTrigger>().playerIsInMarketSellerTrigger == true)
@@ -77,6 +100,9 @@ public class TheLeekQuest : MonoBehaviour
             pressToGiveUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
+
+                //Dialogue should be called here
+
                 doesPlayerHaveLeek = false;
                 pressToGiveUI.SetActive(false);
                 leekToGive.SetActive(true);

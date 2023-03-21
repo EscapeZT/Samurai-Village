@@ -19,7 +19,9 @@ public class SwordQuest : MonoBehaviour
     [SerializeField]
     bool playerHasSword;
 
-    // Start is called before the first frame update
+    /*GAME AUDIO TIP
+    Your FMOD & player objects should be defined here
+    */
 
     void Start()
     {
@@ -32,7 +34,6 @@ public class SwordQuest : MonoBehaviour
         emperorsSwordEnd.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
         DisplayUI();
@@ -44,6 +45,9 @@ public class SwordQuest : MonoBehaviour
     {
         if (pickupTrigger.GetComponent<SwordPickup>().playerCanPickupSword == true && Input.GetKeyDown(KeyCode.E))
         {
+
+            //Pickup sound should be called here
+             //You could either call it at the players location or store the location of the sword pickup
             Destroy(emperorsSword);
             playerHasSword = true;
             pickupUI.SetActive(false);
@@ -55,6 +59,9 @@ public class SwordQuest : MonoBehaviour
     {
         if (endquestTrigger.GetComponent<EndQuestTrigger>().playerInEndTrigger == true && playerHasSword && Input.GetKeyDown(KeyCode.E))
         {
+
+            //Dialogue should be called here
+
             questComplete = true;
             emperorsSwordEnd.SetActive(true);
             pickupUI.SetActive(false);
@@ -62,6 +69,8 @@ public class SwordQuest : MonoBehaviour
             pickupInventory.SetActive(false);
         }
     }
+
+    #region UI
     void DisplayUI()
     {
         //UI for Pickup
@@ -100,5 +109,7 @@ public class SwordQuest : MonoBehaviour
             pickupUI.SetActive(false);
             
         }
+        
     }
+    #endregion
 }
