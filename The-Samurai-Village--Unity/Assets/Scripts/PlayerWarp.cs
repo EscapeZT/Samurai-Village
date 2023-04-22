@@ -8,51 +8,56 @@ public class PlayerWarp : MonoBehaviour
 
 {
     // Start is called before the first frame update
-    public Transform warpMarker1;
-    public Transform warpMarker2;
-    public Transform warpMarker3;
-    public Transform warpMarker4;
-    public Transform warpMarker5;
-    public Transform warpMarker6;
+    [SerializeField]
+    Transform warpMarker1, warpMarker2, warpMarker3, warpMarker4, warpMarker5, warpMarker6;
+    [SerializeField]
+    Transform playerStartLocation;
+    [SerializeField]
+    GameObject player;
 
-    public Transform playerStartLocation;
-
-
-    public Transform player;
-
-    void Awake()
+    void Start()
     {
-        player.position = playerStartLocation.position;
-        player.rotation = playerStartLocation.rotation;
-        
+         player = GameObject.Find("ThirdPersonController");
+        //GetAndSetTransform(playerStartLocation,"PlayerStartMarker");  
+        warpMarker1 = GameObject.Find("WarpMarker1").transform;
+        warpMarker2 = GameObject.Find("WarpMarker2").transform;
+        warpMarker3 = GameObject.Find("WarpMarker3").transform;
+        warpMarker4 = GameObject.Find("WarpMarker4").transform;
+        warpMarker5 = GameObject.Find("WarpMarker5").transform;
+        warpMarker6 = GameObject.Find("WarpMarker6").transform;
+
+        playerStartLocation = GameObject.Find("PlayerStartMarker").transform;
+
+        player.transform.position = playerStartLocation.position;
+        player.transform.rotation = playerStartLocation.rotation;     
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            player.position = warpMarker1.position;
+            player.transform.position = warpMarker1.position;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha2))
         {
-            player.position = warpMarker2.position;
+            player.transform.position = warpMarker2.position;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            player.position = warpMarker3.position;
+            player.transform.position = warpMarker3.position;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha4))
         {
-            player.position = warpMarker4.position;
+            player.transform.position = warpMarker4.position;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha5))
         {
-            player.position = warpMarker5.position;
+            player.transform.position = warpMarker5.position;
         }
         else if (Input.GetKeyDown(KeyCode.Alpha6))
         {
-            player.position = warpMarker6.position;
+            player.transform.position = warpMarker6.position;
         }
     }
+
 }
