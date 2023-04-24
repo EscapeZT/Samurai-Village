@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{34766c29-981b-4e24-bc6d-f7b7231aad47}">
+		<property name="assetPath">
+			<value>Area Loops/Rural Ambience/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a11ccc-3f4d-4ed5-90cb-1698e1302f9e}</destination>
+		</relationship>
+	</object>
+</objects>

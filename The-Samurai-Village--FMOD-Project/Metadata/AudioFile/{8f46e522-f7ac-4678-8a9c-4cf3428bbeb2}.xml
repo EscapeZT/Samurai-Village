@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{8f46e522-f7ac-4678-8a9c-4cf3428bbeb2}">
+		<property name="assetPath">
+			<value>Area Loops/Village Ambience/Village Ambience with Birds_01.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>21.162666666666667</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a11ccc-3f4d-4ed5-90cb-1698e1302f9e}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{99f581f1-0677-4406-b753-966bff3cd179}">
+		<property name="assetPath">
+			<value>Animations/Punching Ninja/Punching-Ninja-Ugh-1.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.76639583333333339</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{43a11ccc-3f4d-4ed5-90cb-1698e1302f9e}</destination>
+		</relationship>
+	</object>
+</objects>
