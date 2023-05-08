@@ -115,8 +115,6 @@ public class FootstepsAudio : MonoBehaviour
 
                 footstepEventInstance.setParameterByID(surfaceTypeID, surfaceTypeIndex);
 
-                // ADD YOUR CODE HERE
-
                 footstepEventInstance.start();
                 footstepEventInstance.release();
 

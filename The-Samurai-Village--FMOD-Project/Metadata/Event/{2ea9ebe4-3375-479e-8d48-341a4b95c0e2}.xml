@@ -59,11 +59,18 @@
 	<object class="EventAutomatableProperties" id="{b388b254-dfce-4b91-90b7-f2ee79a8e636}" />
 	<object class="MarkerTrack" id="{7be2ab28-8d7b-412a-84de-b2336a518549}" />
 	<object class="GroupTrack" id="{ed8956c0-b6dc-4b38-bd85-e4d7a69e4360}">
+		<relationship name="modules">
+			<destination>{514cde6c-1e65-4250-90f0-adb4666097b4}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{446e6527-7411-4afa-914b-8ebe986345bc}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{4b2a0116-e10c-4381-98ac-96eadf01bed5}" />
+	<object class="Timeline" id="{4b2a0116-e10c-4381-98ac-96eadf01bed5}">
+		<relationship name="modules">
+			<destination>{514cde6c-1e65-4250-90f0-adb4666097b4}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{a9690a43-79e4-4b80-ab80-a0f92039856d}">
 		<relationship name="effectChain">
 			<destination>{262dc3f4-649f-474e-bb29-40e0ade8bc99}</destination>
@@ -81,6 +88,14 @@
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{6fb83ee2-5cd8-4a6f-bd0d-6844642bfc45}" />
+	<object class="SingleSound" id="{514cde6c-1e65-4250-90f0-adb4666097b4}">
+		<property name="length">
+			<value>0.64124999999999999</value>
+		</property>
+		<relationship name="audioFile">
+			<destination>{ddc2b4df-dc80-4832-bcad-0f92d356ecb1}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerGroup" id="{446e6527-7411-4afa-914b-8ebe986345bc}">
 		<property name="name">
 			<value>Audio 1</value>
@@ -110,6 +125,16 @@
 	</object>
 	<object class="MixerBusPanner" id="{ed333afa-e3c2-4b54-b07a-19387cefa373}" />
 	<object class="MixerBusFader" id="{5ce7d262-fb90-44f1-a86a-2b2ff9545dff}" />
-	<object class="SpatialiserEffect" id="{c0fd26c4-4fb2-4265-b305-397c5a7e0787}" />
+	<object class="SpatialiserEffect" id="{c0fd26c4-4fb2-4265-b305-397c5a7e0787}">
+		<property name="extentMode">
+			<value>1</value>
+		</property>
+		<property name="soundSize">
+			<value>4.80000019</value>
+		</property>
+		<property name="minimumExtent">
+			<value>74</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{37372102-14d8-4379-8193-d2666b651d36}" />
 </objects>

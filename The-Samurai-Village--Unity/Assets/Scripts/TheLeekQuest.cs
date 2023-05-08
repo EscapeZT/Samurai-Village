@@ -4,6 +4,18 @@ using UnityEngine;
 
 public class TheLeekQuest : MonoBehaviour
 {
+
+
+    [Header("FMOD")]
+    public FMODUnity.StudioEventEmitter leekPickupEmitter;
+    public FMODUnity.StudioEventEmitter leekDropEmitter;
+    public FMODUnity.StudioEventEmitter dialogueStarterEmitter;
+    public FMODUnity.StudioEventEmitter dialogueEndEmitter;
+
+    FMODUnity.StudioEventEmitter musicEmitter;
+
+
+    
     [Header("Triggers")]
     public GameObject leekTrigger;
     public GameObject marketSellerTrigger;
@@ -31,6 +43,10 @@ public class TheLeekQuest : MonoBehaviour
         pressToTalkUI.SetActive(false);
         leekToGive.SetActive(false);
         leekUIImage.SetActive(false);
+
+        musicEmitter = GameObject.Find("Music").GetComponent<FMODUnity.StudioEventEmitter>();
+
+        
     }
 
     void Update()
@@ -53,6 +69,9 @@ public class TheLeekQuest : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //Dialogue should be called here
+                dialogueStarterEmitter.SendMessage("Play");
+                musicEmitter.SetParameter("MusicChange", 1f);
+            
 
                 questStarted = true;
                 pressToTalkUI.SetActive(false);
@@ -77,7 +96,7 @@ public class TheLeekQuest : MonoBehaviour
                 {
                     //Pickup sound should be called here
                     //You could either call it at the players location or store the location of the box pickup
-
+                    leekPickupEmitter.SendMessage("Play");                                 
                     pressToPickUpUI.SetActive(false);
                     Destroy(leekToCollect);
                     doesPlayerHaveLeek = true;
@@ -102,7 +121,10 @@ public class TheLeekQuest : MonoBehaviour
             {
 
                 //Dialogue should be called here
+                leekDropEmitter.SendMessage("Play");
+                dialogueEndEmitter.SendMessage("Play");
 
+                musicEmitter.SetParameter("MusicChange", 2f);
                 doesPlayerHaveLeek = false;
                 pressToGiveUI.SetActive(false);
                 leekToGive.SetActive(true);
