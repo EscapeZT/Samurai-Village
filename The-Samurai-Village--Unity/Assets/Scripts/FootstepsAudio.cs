@@ -187,7 +187,5 @@ public class FootstepsAudio : MonoBehaviour
             }
         }
     }
-
-
     #endregion
 }

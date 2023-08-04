@@ -82,8 +82,6 @@ public class TheLeekQuest : MonoBehaviour
                     Destroy(leekToCollect);
                     doesPlayerHaveLeek = true;
                     leekUIImage.SetActive(true);
-
-
                 }
             }
         }
