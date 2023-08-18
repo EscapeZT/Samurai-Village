@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 /*
     This script controls the menu system
 */
@@ -9,17 +12,20 @@ public class MenuSystem : MonoBehaviour
     [SerializeField]
     bool pauseState, allowPauseInOut, startReset;
     [SerializeField]
-    float reset = 0.0f, resetMax = 10f;
+    float reset = 0.0f, resetMax = 5f;
 
     MenuCameras m_Cameras;
+    MenuCameraTrigger m_CameraTrigger;
 
     // Start is called before the first frame update
     void Start()
     {
         allowPauseInOut = true;
         m_Cameras = GameObject.Find("OtherCameras").GetComponent<MenuCameras>();
+        m_CameraTrigger = GameObject.Find("MenuCameraTrigger").GetComponent<MenuCameraTrigger>();
         pauseState = false;
         startReset = false;
+        MainPauseMenuSetup();
     }
 
     // Update is called once per frame
@@ -27,6 +33,7 @@ public class MenuSystem : MonoBehaviour
     {
         PauseSystem();
         ResetPauseAllow();
+        MainPauseMenuControl();
     }
 
     void PauseSystem()
@@ -40,7 +47,6 @@ public class MenuSystem : MonoBehaviour
             {
                 pauseState = false;
             }
-          
             startReset = true;
         }
 
@@ -48,12 +54,12 @@ public class MenuSystem : MonoBehaviour
         if (pauseState)
         {
             m_Cameras.isInPauseMenu = true;
-            Time.timeScale = 0.25f;
+            //Time.timeScale = 0f;
         }
         else
         {
             m_Cameras.isInPauseMenu = false;
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
         }
 
     }
@@ -62,7 +68,7 @@ public class MenuSystem : MonoBehaviour
     {
         if (startReset)
         {
-            reset = reset += 5f * Time.unscaledDeltaTime;
+            reset = reset += 10f * Time.unscaledDeltaTime;
             allowPauseInOut = false;
         }
 
@@ -73,5 +79,39 @@ public class MenuSystem : MonoBehaviour
             reset = 0f;
         }
 
+    }
+
+    /* ----------------------------------------------------------------
+    MAIN PAUSE MENU
+    ---------------------------------------------------------------- */
+    CanvasGroup pauseMenuCanvasGroup;
+    public float exitMenuFadeSpeed;
+    public float enterMenuFadeSpeed;
+
+    void MainPauseMenuSetup(){
+        GameObject menutempobject = GameObject.Find("Pause Menu Canvas");
+        pauseMenuCanvasGroup = menutempobject.GetComponent<CanvasGroup>();
+    }
+
+    void MainPauseMenuControl(){
+        float menuAlphaFloat = pauseMenuCanvasGroup.alpha;
+        
+        if(m_Cameras.isInPauseMenu && m_CameraTrigger.inTriggerZone)
+        {
+            if(menuAlphaFloat <=1f)
+            {
+                menuAlphaFloat += enterMenuFadeSpeed*Time.deltaTime;
+            }
+        } else if(!m_Cameras.isInPauseMenu && !m_CameraTrigger.inTriggerZone)
+        {
+            if(menuAlphaFloat > 0f)
+            {
+                menuAlphaFloat -= exitMenuFadeSpeed*Time.deltaTime;
+            }
+        }
+
+        
+
+        pauseMenuCanvasGroup.alpha = menuAlphaFloat;
     }
 }

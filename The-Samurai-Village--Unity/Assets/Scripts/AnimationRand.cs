@@ -10,7 +10,6 @@ public class AnimationRand : MonoBehaviour
     {
         m_Animator.speed = Random.Range(0.7f,1.2f);
     }
-    
 }
 
 

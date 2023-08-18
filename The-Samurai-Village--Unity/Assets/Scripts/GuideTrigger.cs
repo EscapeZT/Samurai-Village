@@ -15,15 +15,12 @@ public class GuideTrigger : MonoBehaviour
         var tempcolor = guideImage.color;
         tempcolor.a = 0;
         guidefadetime = 0.08f;
-
     }
 
     // Update is called once per frame
     void Update()
     {
         GuideFade();
-      
-        
     }
 
     void OnTriggerEnter(Collider player)

@@ -1,22 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.Rendering.Universal;
+using UnityEngine.UI;
 
 public class MenuCameras : MonoBehaviour
 {
-    public bool isInPauseMenu = false; 
-    Transform camera1Transform;
+    public bool isInPauseMenu = false;
+    public bool exitPauseMenu;
+    public bool menuCameraReset = false;
+    Transform menuCamera1Transform;
     GameObject menuCamera1;
     GameObject mainCamera;
+    GameObject inGameUIObject;
+
+    public Transform camera1TransformStart;
+    public Transform camera1TransformPosition1;
 
     // Start is called before the first frame update
     void Start()
     {
+        mainCameraFade = false;
         SetupCameras();
+        blackOutImage = GameObject.Find("BlackOut").GetComponent<Image>();
+        var tempColor = blackOutImage.color;
+        tempColor.a = 0f;
+        blackOutImage.color = tempColor;
+
+        inGameUIObject = GameObject.Find("In Game UI");
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ResetCamera1();
         TurnOffMainCamera();
@@ -25,9 +41,9 @@ public class MenuCameras : MonoBehaviour
 
     void SetupCameras()
     {
+        exitPauseMenu = false;
         menuCamera1 = GameObject.Find("MenuCamera1");
-        camera1Transform = menuCamera1.transform;
-        camera1Transform.localPosition = camera1StartLocation;
+        menuCamera1.transform.position = camera1TransformStart.position;
         menuCamera1.SetActive(false);
         //GetMainCamera
         mainCamera = GameObject.Find("Camera");
@@ -37,39 +53,83 @@ public class MenuCameras : MonoBehaviour
     float timeResetMax = 10f;
     void ResetCamera1()
     {
-        float t = 0f;
-        if(!isInPauseMenu)
-        {
-            t = t+Time.deltaTime+timeResetModifier;
-            if(t >= timeResetMax)
-            {
-                camera1Transform.localPosition = camera1StartLocation;
-            }
-        }
-    }
-    Vector3 camera1StartLocation = new Vector3(38.6500015f,58.5600014f,-89.6999969f);
-    Vector3 camera1EndLocation = new Vector3(38.6500015f,50.9f,-89.6999969f);
-    float movementSpeed = 1f; 
 
+        /*
+        if (!isInPauseMenu)
+        {
+            menuCamera1.transform.position = camera1TransformStart.position;
+        }
+        */
+    }
+    float movementSpeed = 1f;
     void MenuLoadCameraMove()
     {
-        if(isInPauseMenu)
+        if (isInPauseMenu)
         {
-            camera1Transform.localPosition = new Vector3(camera1Transform.position.x,Mathf.Lerp(camera1StartLocation.y,camera1EndLocation.y,movementSpeed),camera1Transform.position.z);
+            menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformPosition1.position, Time.deltaTime);
         }
     }
 
+    [SerializeField]
+    bool mainCameraFade;
+    [SerializeField]
+    float tempColorFloat;
+    Image blackOutImage;
     void TurnOffMainCamera()
     {
-        if(isInPauseMenu)
+        var tempColor = blackOutImage.color;
+        tempColorFloat = tempColor.a;
+
+        //check if in pause mode (controlled in MenuSystem.cs)
+        if (isInPauseMenu)
         {
-            mainCamera.SetActive(false);
-            menuCamera1.SetActive(true);
-        } else if (!isInPauseMenu)
-        {
-            menuCamera1.SetActive(false);
-            mainCamera.SetActive(true);
+            //check if camera fade is complete to full black out.
+            if (!mainCameraFade)
+            {
+                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.deltaTime);
+
+                if (tempColor.a >= 1f)
+                {
+                    inGameUIObject.SetActive(false);
+                    mainCameraFade = true;
+                }
+            }
+
+            //if mainCameraFade complete, swap the cameras while screen is black.
+            if (mainCameraFade)
+            {
+                mainCamera.SetActive(false);
+                menuCamera1.SetActive(true);
+
+                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.deltaTime);
+            }
+
         }
+        else if (!isInPauseMenu)
+        {
+            if (mainCameraFade)
+            {
+                menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformStart.position, Time.deltaTime);
+
+                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.deltaTime);
+
+                if (tempColor.a >= 1f)
+                {
+                    mainCameraFade = false;
+                    inGameUIObject.SetActive(true);
+                }
+            }
+
+            if (!mainCameraFade)
+            {
+                menuCamera1.SetActive(false);
+                mainCamera.SetActive(true);
+
+                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.deltaTime);
+            }
+        }
+
+        blackOutImage.color = tempColor;
     }
 
     /*

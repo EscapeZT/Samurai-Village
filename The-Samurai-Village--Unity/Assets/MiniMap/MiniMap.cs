@@ -6,9 +6,7 @@ public class MiniMap : MonoBehaviour
 {
     public Transform player;
     public Transform playerCamera;
-
     public Transform MapMemory1;
-
     public Transform MapMemory2;
 
     bool goToMemory1;

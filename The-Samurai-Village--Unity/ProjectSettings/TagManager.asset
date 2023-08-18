@@ -9,6 +9,7 @@ TagManager:
   - Grass
   - Sand
   - Wood
+  - MenuCamera
   layers:
   - Default
   - TransparentFX

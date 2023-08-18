@@ -19,8 +19,6 @@ public class NoPlayerZone : MonoBehaviour
     void Awake()
     {
         v = GetComponent<Volume>();
-
-
     }
 
     void Start()
@@ -49,7 +47,6 @@ public class NoPlayerZone : MonoBehaviour
         }
 
         turnBack.color = tempColor;
-
     }
 
     void OnTriggerEnter(Collider player)
@@ -61,8 +58,4 @@ public class NoPlayerZone : MonoBehaviour
     {
         playerInNoPlayerZone = false;
     }
-
-
-
-
 }
