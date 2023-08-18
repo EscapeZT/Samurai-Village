@@ -100,17 +100,15 @@ public class MenuSystem : MonoBehaviour
         {
             if(menuAlphaFloat <=1f)
             {
-                menuAlphaFloat += enterMenuFadeSpeed*Time.deltaTime;
+                menuAlphaFloat += enterMenuFadeSpeed*Time.unscaledDeltaTime;
             }
         } else if(!m_Cameras.isInPauseMenu && !m_CameraTrigger.inTriggerZone)
         {
             if(menuAlphaFloat > 0f)
             {
-                menuAlphaFloat -= exitMenuFadeSpeed*Time.deltaTime;
+                menuAlphaFloat -= exitMenuFadeSpeed*Time.unscaledDeltaTime;
             }
         }
-
-        
 
         pauseMenuCanvasGroup.alpha = menuAlphaFloat;
     }

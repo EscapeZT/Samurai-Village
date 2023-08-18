@@ -11,7 +11,7 @@ public class ControlDebug : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         MovementDebug();
         InteractionDebug();

@@ -66,7 +66,7 @@ public class MenuCameras : MonoBehaviour
     {
         if (isInPauseMenu)
         {
-            menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformPosition1.position, Time.deltaTime);
+            menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformPosition1.position, Time.unscaledDeltaTime);
         }
     }
 
@@ -86,7 +86,7 @@ public class MenuCameras : MonoBehaviour
             //check if camera fade is complete to full black out.
             if (!mainCameraFade)
             {
-                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.deltaTime);
+                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.unscaledDeltaTime);
 
                 if (tempColor.a >= 1f)
                 {
@@ -101,7 +101,7 @@ public class MenuCameras : MonoBehaviour
                 mainCamera.SetActive(false);
                 menuCamera1.SetActive(true);
 
-                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.deltaTime);
+                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.unscaledDeltaTime);
             }
 
         }
@@ -109,9 +109,9 @@ public class MenuCameras : MonoBehaviour
         {
             if (mainCameraFade)
             {
-                menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformStart.position, Time.deltaTime);
+                menuCamera1.transform.position = Vector3.Lerp(menuCamera1.transform.position, camera1TransformStart.position, Time.unscaledDeltaTime);
 
-                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.deltaTime);
+                tempColor.a = Mathf.Lerp(tempColor.a, 1.1f, 4f * Time.unscaledDeltaTime);
 
                 if (tempColor.a >= 1f)
                 {
@@ -125,7 +125,7 @@ public class MenuCameras : MonoBehaviour
                 menuCamera1.SetActive(false);
                 mainCamera.SetActive(true);
 
-                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.deltaTime);
+                tempColor.a = Mathf.Lerp(tempColor.a, -0.1f, 4f * Time.unscaledDeltaTime);
             }
         }
 
