@@ -17,6 +17,7 @@ public class MenuSystem : MonoBehaviour
     MenuCameras m_Cameras;
     MenuCameraTrigger m_CameraTrigger;
 
+    master_time m_master_time;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class MenuSystem : MonoBehaviour
         pauseState = false;
         startReset = false;
         MainPauseMenuSetup();
+        m_master_time = GameObject.Find("Time Control").GetComponent<master_time>();
     }
 
     // Update is called once per frame
@@ -50,18 +52,18 @@ public class MenuSystem : MonoBehaviour
             startReset = true;
         }
 
-
         if (pauseState)
         {
             m_Cameras.isInPauseMenu = true;
+            m_master_time.isPaused = true;
             //Time.timeScale = 0f;
         }
         else
         {
             m_Cameras.isInPauseMenu = false;
+            m_master_time.isPaused = false; 
             //Time.timeScale = 1f;
         }
-
     }
 
     void ResetPauseAllow()
