@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EventFolder" id="{9c4949cb-147f-4e6f-a28f-b7b4835597b2}">
+		<property name="name">
+			<value>Area Loops</value>
+		</property>
+		<relationship name="folder">
+			<destination>{0cabd6a7-e28a-46d7-8fad-8d8a22f831cb}</destination>
+		</relationship>
+	</object>
+</objects>
