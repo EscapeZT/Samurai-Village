@@ -13,12 +13,28 @@ public class TheLeekQuest : MonoBehaviour
     public GameObject pressToPickUpUI;
     public GameObject pressToGiveUI;
     public GameObject leekUIImage;
+
     [Header("Items")]
     public GameObject leekToCollect;
     public GameObject leekToGive;
+    public GameObject MarketSeller;
     public bool questStarted;
     bool doesPlayerHaveLeek;
 
+    //FMOD Playback Locations
+    Transform MarketSellerTransform;
+    Transform pickupTransform;
+    Transform putdownTransform;
+
+    [Header("FMOD Events")]
+    public FMODUnity.EventReference questStartEvent;
+    public FMODUnity.EventReference questEndEvent;
+    public FMODUnity.EventReference pickupEvent;
+    public FMODUnity.EventReference putdownEvent;
+    FMOD.Studio.EventInstance questStartEventInstance;
+    FMOD.Studio.EventInstance questEndEventInstance;
+    FMOD.Studio.EventInstance pickupEventInstance;
+    FMOD.Studio.EventInstance putdownEventInstance;
     /*GAME AUDIO TIP
     Your FMOD & player objects should be defined here
     */
@@ -31,6 +47,8 @@ public class TheLeekQuest : MonoBehaviour
         pressToTalkUI.SetActive(false);
         leekToGive.SetActive(false);
         leekUIImage.SetActive(false);
+
+        FMODInitialiseEvents();
     }
 
     void Update()
@@ -52,7 +70,8 @@ public class TheLeekQuest : MonoBehaviour
             pressToTalkUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //Dialogue should be called here
+                
+                LeekQuestAudio("Quest Start");
 
                 questStarted = true;
                 pressToTalkUI.SetActive(false);
@@ -75,8 +94,7 @@ public class TheLeekQuest : MonoBehaviour
                 pressToPickUpUI.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
-                    //Pickup sound should be called here
-                    //You could either call it at the players location or store the location of the box pickup
+                    LeekQuestAudio("Pickup");
 
                     pressToPickUpUI.SetActive(false);
                     Destroy(leekToCollect);
@@ -100,7 +118,8 @@ public class TheLeekQuest : MonoBehaviour
             pressToGiveUI.SetActive(true);
             if (Input.GetKeyDown(KeyCode.E))
             {
-
+                LeekQuestAudio("Quest End");
+                LeekQuestAudio("Put Down");
                 //Dialogue should be called here
 
                 doesPlayerHaveLeek = false;
@@ -108,6 +127,54 @@ public class TheLeekQuest : MonoBehaviour
                 leekToGive.SetActive(true);
                 leekUIImage.SetActive(false);
             }
+        }
+    }
+
+    void FMODInitialiseEvents()
+    {
+        pickupTransform = leekToCollect.GetComponent<Transform>();
+        putdownTransform = leekToGive.GetComponent<Transform>();
+
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(pickupEventInstance, pickupTransform);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(putdownEventInstance, putdownTransform);
+    }
+
+    void LeekQuestAudio(string soundToPlay)
+    {
+        if(soundToPlay == "Quest Start")
+        {
+            //This is a 2D Sound and doesn't require 3D attributes
+            questStartEventInstance = FMODUnity.RuntimeManager.CreateInstance(questStartEvent);
+            questStartEventInstance.start();
+            questStartEventInstance.release();
+        } 
+        else if(soundToPlay == "Quest End")
+        {
+            //This is a 2D Sound and doesn't require 3D attributes
+            questEndEventInstance = FMODUnity.RuntimeManager.CreateInstance(questEndEvent);
+            questEndEventInstance.start();
+            questEndEventInstance.release();
+
+        } 
+        else if(soundToPlay == "Pickup")
+        {
+            pickupEventInstance = FMODUnity.RuntimeManager.CreateInstance(pickupEvent);
+            GameObject leekPlayback = new GameObject();
+            leekPlayback.transform.position = pickupTransform.position;
+            pickupEventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(leekPlayback));
+            pickupEventInstance.start();
+            pickupEventInstance.release();
+            Destroy(leekPlayback);
+        } 
+        else if(soundToPlay == "Put Down")
+        {
+            putdownEventInstance = FMODUnity.RuntimeManager.CreateInstance(putdownEvent);
+            GameObject leekPlayback = new GameObject();
+            leekPlayback.transform.position = putdownTransform.position;
+            putdownEventInstance.set3DAttributes(FMODUnity.RuntimeUtils.To3DAttributes(leekPlayback));
+            putdownEventInstance.start();
+            putdownEventInstance.release();
+            Destroy(leekPlayback);
         }
     }
 
