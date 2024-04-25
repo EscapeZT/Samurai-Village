@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.02.00">
 	<object class="Event" id="{e73b2b5d-e317-40ff-8d2e-f7c054def0ec}">
+		<property name="color">
+			<value>Red</value>
+		</property>
 		<property name="name">
-			<value>Gongs</value>
+			<value>Gong</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
