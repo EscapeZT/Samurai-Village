@@ -120,6 +120,8 @@ public class FootstepsAudio : MonoBehaviour
                 footstepEventInstance.start();
                 footstepEventInstance.release();
 
+                Debug.Log("Footstep Played");
+
                 footstepActive = true;
 
             }
